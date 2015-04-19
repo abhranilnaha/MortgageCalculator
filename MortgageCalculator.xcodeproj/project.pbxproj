@@ -9,12 +9,12 @@
 /* Begin PBXBuildFile section */
 		2E68C0EE1AE0A5C200392AB9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E68C0ED1AE0A5C200392AB9 /* main.m */; };
 		2E68C0F11AE0A5C200392AB9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E68C0F01AE0A5C200392AB9 /* AppDelegate.m */; };
-		2E68C0F41AE0A5C200392AB9 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E68C0F31AE0A5C200392AB9 /* FirstViewController.m */; };
-		2E68C0F71AE0A5C200392AB9 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E68C0F61AE0A5C200392AB9 /* SecondViewController.m */; };
 		2E68C0FA1AE0A5C200392AB9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E68C0F81AE0A5C200392AB9 /* Main.storyboard */; };
 		2E68C0FC1AE0A5C200392AB9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E68C0FB1AE0A5C200392AB9 /* Images.xcassets */; };
 		2E68C0FF1AE0A5C200392AB9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E68C0FD1AE0A5C200392AB9 /* LaunchScreen.xib */; };
 		2E68C10B1AE0A5C200392AB9 /* MortgageCalculatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E68C10A1AE0A5C200392AB9 /* MortgageCalculatorTests.m */; };
+		2E68C1191AE0C44300392AB9 /* MapViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E68C1181AE0C44300392AB9 /* MapViewViewController.m */; };
+		2E68C11E1AE345BA00392AB9 /* MortgageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E68C11D1AE345BA00392AB9 /* MortgageViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,16 +33,16 @@
 		2E68C0ED1AE0A5C200392AB9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2E68C0EF1AE0A5C200392AB9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		2E68C0F01AE0A5C200392AB9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		2E68C0F21AE0A5C200392AB9 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		2E68C0F31AE0A5C200392AB9 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
-		2E68C0F51AE0A5C200392AB9 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		2E68C0F61AE0A5C200392AB9 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		2E68C0F91AE0A5C200392AB9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2E68C0FB1AE0A5C200392AB9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		2E68C0FE1AE0A5C200392AB9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		2E68C1041AE0A5C200392AB9 /* MortgageCalculatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MortgageCalculatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E68C1091AE0A5C200392AB9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2E68C10A1AE0A5C200392AB9 /* MortgageCalculatorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MortgageCalculatorTests.m; sourceTree = "<group>"; };
+		2E68C1171AE0C44300392AB9 /* MapViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewViewController.h; sourceTree = "<group>"; };
+		2E68C1181AE0C44300392AB9 /* MapViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewViewController.m; sourceTree = "<group>"; };
+		2E68C11C1AE345BA00392AB9 /* MortgageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MortgageViewController.h; sourceTree = "<group>"; };
+		2E68C11D1AE345BA00392AB9 /* MortgageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MortgageViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,12 +84,12 @@
 		2E68C0EA1AE0A5C200392AB9 /* MortgageCalculator */ = {
 			isa = PBXGroup;
 			children = (
+				2E68C11C1AE345BA00392AB9 /* MortgageViewController.h */,
+				2E68C11D1AE345BA00392AB9 /* MortgageViewController.m */,
+				2E68C1171AE0C44300392AB9 /* MapViewViewController.h */,
+				2E68C1181AE0C44300392AB9 /* MapViewViewController.m */,
 				2E68C0EF1AE0A5C200392AB9 /* AppDelegate.h */,
 				2E68C0F01AE0A5C200392AB9 /* AppDelegate.m */,
-				2E68C0F21AE0A5C200392AB9 /* FirstViewController.h */,
-				2E68C0F31AE0A5C200392AB9 /* FirstViewController.m */,
-				2E68C0F51AE0A5C200392AB9 /* SecondViewController.h */,
-				2E68C0F61AE0A5C200392AB9 /* SecondViewController.m */,
 				2E68C0F81AE0A5C200392AB9 /* Main.storyboard */,
 				2E68C0FB1AE0A5C200392AB9 /* Images.xcassets */,
 				2E68C0FD1AE0A5C200392AB9 /* LaunchScreen.xib */,
@@ -173,6 +173,7 @@
 				TargetAttributes = {
 					2E68C0E71AE0A5C200392AB9 = {
 						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = 7BHCDJ55EZ;
 					};
 					2E68C1031AE0A5C200392AB9 = {
 						CreatedOnToolsVersion = 6.2;
@@ -224,9 +225,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2E68C0F71AE0A5C200392AB9 /* SecondViewController.m in Sources */,
+				2E68C11E1AE345BA00392AB9 /* MortgageViewController.m in Sources */,
+				2E68C1191AE0C44300392AB9 /* MapViewViewController.m in Sources */,
 				2E68C0F11AE0A5C200392AB9 /* AppDelegate.m in Sources */,
-				2E68C0F41AE0A5C200392AB9 /* FirstViewController.m in Sources */,
 				2E68C0EE1AE0A5C200392AB9 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -351,6 +352,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = MortgageCalculator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -361,6 +363,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = MortgageCalculator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -420,6 +423,7 @@
 				2E68C1101AE0A5C200392AB9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2E68C1111AE0A5C200392AB9 /* Build configuration list for PBXNativeTarget "MortgageCalculatorTests" */ = {
 			isa = XCConfigurationList;
@@ -428,6 +432,7 @@
 				2E68C1131AE0A5C200392AB9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

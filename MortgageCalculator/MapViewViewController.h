@@ -1,5 +1,5 @@
 //
-//  SecondViewController.h
+//  MapViewViewController.h
 //  MortgageCalculator
 //
 //  Created by loaner on 4/16/15.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SecondViewController : UIViewController
-
+@interface MapViewViewController : UIViewController
 
 @end
-
