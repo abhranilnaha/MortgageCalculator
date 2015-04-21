@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="13F1077" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Mortgage View Controller-->
@@ -20,22 +21,14 @@
                                 <rect key="frame" x="221" y="279" width="158" height="42"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Loaded by MortgageViewController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A5M-7J-77L">
-                                <rect key="frame" x="16" y="329" width="568" height="17"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="KQZ-1w-vlD" secondAttribute="centerX" id="0td-1N-Fbl"/>
-                            <constraint firstAttribute="centerY" secondItem="A5M-7J-77L" secondAttribute="centerY" constant="-50" id="Hdz-8g-LbR"/>
-                            <constraint firstAttribute="centerY" secondItem="KQZ-1w-vlD" secondAttribute="centerY" constant="50" id="QWD-7G-6XZ"/>
-                            <constraint firstAttribute="centerX" secondItem="A5M-7J-77L" secondAttribute="centerX" id="cUQ-3C-O02"/>
+                            <constraint firstAttribute="centerY" secondItem="KQZ-1w-vlD" secondAttribute="centerY" id="VtP-YF-5JY"/>
+                            <constraint firstAttribute="centerX" secondItem="KQZ-1w-vlD" secondAttribute="centerX" id="t3a-VV-4uO"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Ojb-4P-IvZ">
@@ -49,11 +42,10 @@
                         </textField>
                         <barButtonItem key="rightBarButtonItem" title="Save" id="MRx-hh-5lh">
                             <connections>
-                                <action selector="SaveMortgage:" destination="9pv-A4-QxB" id="l7C-08-fvt"/>
+                                <action selector="SaveMortgage:" destination="9pv-A4-QxB" id="Als-ZH-feV"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <nil key="simulatedTopBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
@@ -71,26 +63,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" text="Map View" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="zEq-FU-wV5">
-                                <rect key="frame" x="196" y="228" width="210" height="42"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Loaded by MapViewController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NDk-cv-Gan">
-                                <rect key="frame" x="16" y="329" width="568" height="17"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Nd3-ew-u7j">
+                                <rect key="frame" x="0.0" y="64" width="613" height="487"/>
+                            </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="NDk-cv-Gan" secondAttribute="centerX" id="0od-g4-SIo"/>
-                            <constraint firstAttribute="centerY" secondItem="NDk-cv-Gan" secondAttribute="centerY" constant="-50" id="1D1-jU-t8P"/>
-                            <constraint firstAttribute="centerX" secondItem="zEq-FU-wV5" secondAttribute="centerX" id="i4w-9H-06B"/>
-                            <constraint firstAttribute="centerY" secondItem="zEq-FU-wV5" secondAttribute="centerY" constant="50" id="wBI-WT-2cf"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Nd3-ew-u7j" secondAttribute="trailing" constant="-29" id="DGV-ph-QYa"/>
+                            <constraint firstItem="Nd3-ew-u7j" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leading" id="NgQ-Id-vfH"/>
+                            <constraint firstItem="Djb-ko-YwX" firstAttribute="top" secondItem="Nd3-ew-u7j" secondAttribute="bottom" id="Vyf-0K-CCC"/>
+                            <constraint firstItem="Nd3-ew-u7j" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" id="gD0-et-BPt"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="SxP-sH-nQ4">
@@ -164,6 +146,23 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8G0-Nl-i5k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="750" y="360"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="gug-fm-BOJ">
+            <objects>
+                <viewController id="FTZ-wd-zMr" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="93e-sV-mLd"/>
+                        <viewControllerLayoutGuide type="bottom" id="bC3-Mg-Irq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0eJ-i1-fQ6">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tEI-nk-UeF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
         </scene>
     </scenes>
     <resources>

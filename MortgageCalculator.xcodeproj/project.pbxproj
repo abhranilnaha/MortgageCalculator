@@ -15,6 +15,7 @@
 		2E68C10B1AE0A5C200392AB9 /* MortgageCalculatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E68C10A1AE0A5C200392AB9 /* MortgageCalculatorTests.m */; };
 		2E68C1191AE0C44300392AB9 /* MapViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E68C1181AE0C44300392AB9 /* MapViewViewController.m */; };
 		2E68C11E1AE345BA00392AB9 /* MortgageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E68C11D1AE345BA00392AB9 /* MortgageViewController.m */; };
+		2EFB16DF1AE6434800E8D766 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EFB16DE1AE6434800E8D766 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,7 @@
 		2E68C1181AE0C44300392AB9 /* MapViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewViewController.m; sourceTree = "<group>"; };
 		2E68C11C1AE345BA00392AB9 /* MortgageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MortgageViewController.h; sourceTree = "<group>"; };
 		2E68C11D1AE345BA00392AB9 /* MortgageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MortgageViewController.m; sourceTree = "<group>"; };
+		2EFB16DE1AE6434800E8D766 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2EFB16DF1AE6434800E8D766 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,6 +69,7 @@
 		2E68C0DF1AE0A5C200392AB9 = {
 			isa = PBXGroup;
 			children = (
+				2EFB16DE1AE6434800E8D766 /* MapKit.framework */,
 				2E68C0EA1AE0A5C200392AB9 /* MortgageCalculator */,
 				2E68C1071AE0A5C200392AB9 /* MortgageCalculatorTests */,
 				2E68C0E91AE0A5C200392AB9 /* Products */,
