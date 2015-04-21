@@ -1,18 +1,18 @@
 //
-//  MortgageViewController.m
+//  CalculationViewController.m
 //  MortgageCalculator
 //
-//  Created by loaner on 4/18/15.
+//  Created by loaner on 4/21/15.
 //  Copyright (c) 2015 SJSU. All rights reserved.
 //
 
-#import "MortgageViewController.h"
+#import "CalculationViewController.h"
 
-@interface MortgageViewController ()
+@interface CalculationViewController ()
 
 @end
 
-@implementation MortgageViewController
+@implementation CalculationViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -33,7 +33,9 @@
     // Pass the selected object to the new view controller.
 }
 */
+- (IBAction)createMortgage:(id)sender {
+}
 
-- (IBAction)SaveMortgage:(id)sender {
+- (IBAction)saveMortgage:(id)sender {
 }
 @end

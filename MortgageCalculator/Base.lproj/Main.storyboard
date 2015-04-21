@@ -5,10 +5,10 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Mortgage View Controller-->
+        <!--Calculation View Controller-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
-                <viewController id="9pv-A4-QxB" customClass="MortgageViewController" sceneMemberID="viewController">
+                <viewController id="9pv-A4-QxB" customClass="CalculationViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ia1-K6-d13"/>
                         <viewControllerLayoutGuide type="bottom" id="4ug-Mw-9AY"/>
@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="64" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" text="Mortgage View" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="KQZ-1w-vlD">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" text="Calculation View" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="KQZ-1w-vlD">
                                 <rect key="frame" x="221" y="279" width="158" height="42"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
@@ -33,6 +33,11 @@
                     </view>
                     <navigationItem key="navigationItem" id="Ojb-4P-IvZ">
                         <nil key="title"/>
+                        <barButtonItem key="leftBarButtonItem" title="New" id="8aC-kd-NV1">
+                            <connections>
+                                <action selector="createMortgage:" destination="9pv-A4-QxB" id="Idv-0f-0y6"/>
+                            </connections>
+                        </barButtonItem>
                         <textField key="titleView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Calculation" textAlignment="center" minimumFontSize="20" id="94h-DH-0tx">
                             <rect key="frame" x="180" y="7" width="240" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -42,7 +47,7 @@
                         </textField>
                         <barButtonItem key="rightBarButtonItem" title="Save" id="MRx-hh-5lh">
                             <connections>
-                                <action selector="SaveMortgage:" destination="9pv-A4-QxB" id="Als-ZH-feV"/>
+                                <action selector="saveMortgage:" destination="9pv-A4-QxB" id="KiH-ms-eiE"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -109,11 +114,11 @@
             </objects>
             <point key="canvasLocation" x="0.0" y="0.0"/>
         </scene>
-        <!--Mortgage-->
+        <!--Calculator-->
         <scene sceneID="B1s-oy-SC6">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Gcp-wl-BGI" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Mortgage" image="first" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="Calculator" image="first" id="acW-dT-cKf"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="lNQ-aF-wnO">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -146,23 +151,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8G0-Nl-i5k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="750" y="360"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="gug-fm-BOJ">
-            <objects>
-                <viewController id="FTZ-wd-zMr" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="93e-sV-mLd"/>
-                        <viewControllerLayoutGuide type="bottom" id="bC3-Mg-Irq"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="0eJ-i1-fQ6">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="tEI-nk-UeF" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
         </scene>
     </scenes>
     <resources>

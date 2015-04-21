@@ -14,8 +14,8 @@
 		2E68C0FF1AE0A5C200392AB9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E68C0FD1AE0A5C200392AB9 /* LaunchScreen.xib */; };
 		2E68C10B1AE0A5C200392AB9 /* MortgageCalculatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E68C10A1AE0A5C200392AB9 /* MortgageCalculatorTests.m */; };
 		2E68C1191AE0C44300392AB9 /* MapViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E68C1181AE0C44300392AB9 /* MapViewViewController.m */; };
-		2E68C11E1AE345BA00392AB9 /* MortgageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E68C11D1AE345BA00392AB9 /* MortgageViewController.m */; };
 		2EFB16DF1AE6434800E8D766 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EFB16DE1AE6434800E8D766 /* MapKit.framework */; };
+		2EFB16E81AE64D0800E8D766 /* CalculationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EFB16E71AE64D0800E8D766 /* CalculationViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,9 +42,9 @@
 		2E68C10A1AE0A5C200392AB9 /* MortgageCalculatorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MortgageCalculatorTests.m; sourceTree = "<group>"; };
 		2E68C1171AE0C44300392AB9 /* MapViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewViewController.h; sourceTree = "<group>"; };
 		2E68C1181AE0C44300392AB9 /* MapViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewViewController.m; sourceTree = "<group>"; };
-		2E68C11C1AE345BA00392AB9 /* MortgageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MortgageViewController.h; sourceTree = "<group>"; };
-		2E68C11D1AE345BA00392AB9 /* MortgageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MortgageViewController.m; sourceTree = "<group>"; };
 		2EFB16DE1AE6434800E8D766 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		2EFB16E61AE64D0800E8D766 /* CalculationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalculationViewController.h; sourceTree = "<group>"; };
+		2EFB16E71AE64D0800E8D766 /* CalculationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalculationViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,8 +88,8 @@
 		2E68C0EA1AE0A5C200392AB9 /* MortgageCalculator */ = {
 			isa = PBXGroup;
 			children = (
-				2E68C11C1AE345BA00392AB9 /* MortgageViewController.h */,
-				2E68C11D1AE345BA00392AB9 /* MortgageViewController.m */,
+				2EFB16E61AE64D0800E8D766 /* CalculationViewController.h */,
+				2EFB16E71AE64D0800E8D766 /* CalculationViewController.m */,
 				2E68C1171AE0C44300392AB9 /* MapViewViewController.h */,
 				2E68C1181AE0C44300392AB9 /* MapViewViewController.m */,
 				2E68C0EF1AE0A5C200392AB9 /* AppDelegate.h */,
@@ -229,7 +229,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2E68C11E1AE345BA00392AB9 /* MortgageViewController.m in Sources */,
+				2EFB16E81AE64D0800E8D766 /* CalculationViewController.m in Sources */,
 				2E68C1191AE0C44300392AB9 /* MapViewViewController.m in Sources */,
 				2E68C0F11AE0A5C200392AB9 /* AppDelegate.m in Sources */,
 				2E68C0EE1AE0A5C200392AB9 /* main.m in Sources */,
