@@ -90,7 +90,8 @@
     [self.loanAmount setText:@"100000"];
     [self.downPayment setText:@"20000"];
     [self.annualRate setText:@""];
-    [self.payYear setText:@"30"];    
+    [self.payYear setText:@"30"];
+    [self.monthlyPayment setText:@""];
     
     [self.propertyType setUserInteractionEnabled:YES];
     [self.streetAddress setUserInteractionEnabled:YES];
@@ -101,6 +102,7 @@
     [self.downPayment setEnabled:YES];
     [self.annualRate setEnabled:YES];
     [self.payYear setEnabled:YES];
+    [self.saveButton setEnabled:YES];
 }
 
 - (IBAction)saveMortgage:(id)sender {
