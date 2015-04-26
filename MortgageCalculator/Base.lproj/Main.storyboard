@@ -349,7 +349,7 @@
         <scene sceneID="B1s-oy-SC6">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Gcp-wl-BGI" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Calculator" image="first" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="Calculator" image="calendar" id="acW-dT-cKf"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="lNQ-aF-wnO">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -368,7 +368,7 @@
         <scene sceneID="b32-ZU-gtn">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jdp-mW-dar" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Map" image="second" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="Map" image="location" id="cPa-gy-q4n"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="VDp-Td-ZjM">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -385,7 +385,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="first" width="30" height="30"/>
-        <image name="second" width="30" height="30"/>
+        <image name="calendar" width="18" height="19"/>
+        <image name="location" width="20" height="23"/>
     </resources>
 </document>
