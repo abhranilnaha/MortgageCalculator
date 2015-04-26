@@ -16,8 +16,8 @@
 
 +(DBManager*)getSharedInstance;
 -(BOOL)createDB;
--(BOOL) saveData:(NSString*)registerNumber name:(NSString*)name
-      department:(NSString*)department year:(NSString*)year;
--(NSArray*) findByRegisterNumber:(NSString*)registerNumber;
+-(BOOL) saveData:(NSString*)propertyType address:(NSString*)address city:(NSString*)city state:(NSString*)state zipCode:(NSString*)zipCode
+      loanAmount:(int)loanAmount downPayment:(int)downPayment annualRate:(double)annualRate payYear:(int)payYear mortgageAmount:(NSString*)mortgageAmount;
+-(NSArray*) getData;
 
 @end
