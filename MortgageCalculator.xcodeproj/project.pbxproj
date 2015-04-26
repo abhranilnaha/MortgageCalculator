@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E5903E21AEB7F6300883A53 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E5903E11AEB7F6300883A53 /* libsqlite3.dylib */; };
+		2E5903E51AEB83A100883A53 /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E5903E41AEB83A100883A53 /* DBManager.m */; };
 		2E68C0EE1AE0A5C200392AB9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E68C0ED1AE0A5C200392AB9 /* main.m */; };
 		2E68C0F11AE0A5C200392AB9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E68C0F01AE0A5C200392AB9 /* AppDelegate.m */; };
 		2E68C0FA1AE0A5C200392AB9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E68C0F81AE0A5C200392AB9 /* Main.storyboard */; };
@@ -29,6 +31,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2E5903E11AEB7F6300883A53 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		2E5903E31AEB83A100883A53 /* DBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBManager.h; sourceTree = "<group>"; };
+		2E5903E41AEB83A100883A53 /* DBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBManager.m; sourceTree = "<group>"; };
 		2E68C0E81AE0A5C200392AB9 /* MortgageCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MortgageCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E68C0EC1AE0A5C200392AB9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2E68C0ED1AE0A5C200392AB9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -52,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E5903E21AEB7F6300883A53 /* libsqlite3.dylib in Frameworks */,
 				2EFB16DF1AE6434800E8D766 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -69,6 +75,7 @@
 		2E68C0DF1AE0A5C200392AB9 = {
 			isa = PBXGroup;
 			children = (
+				2E5903E11AEB7F6300883A53 /* libsqlite3.dylib */,
 				2EFB16DE1AE6434800E8D766 /* MapKit.framework */,
 				2E68C0EA1AE0A5C200392AB9 /* MortgageCalculator */,
 				2E68C1071AE0A5C200392AB9 /* MortgageCalculatorTests */,
@@ -92,6 +99,8 @@
 				2EFB16E71AE64D0800E8D766 /* CalculationViewController.m */,
 				2E68C1171AE0C44300392AB9 /* MapViewViewController.h */,
 				2E68C1181AE0C44300392AB9 /* MapViewViewController.m */,
+				2E5903E31AEB83A100883A53 /* DBManager.h */,
+				2E5903E41AEB83A100883A53 /* DBManager.m */,
 				2E68C0EF1AE0A5C200392AB9 /* AppDelegate.h */,
 				2E68C0F01AE0A5C200392AB9 /* AppDelegate.m */,
 				2E68C0F81AE0A5C200392AB9 /* Main.storyboard */,
@@ -233,6 +242,7 @@
 				2E68C1191AE0C44300392AB9 /* MapViewViewController.m in Sources */,
 				2E68C0F11AE0A5C200392AB9 /* AppDelegate.m in Sources */,
 				2E68C0EE1AE0A5C200392AB9 /* main.m in Sources */,
+				2E5903E51AEB83A100883A53 /* DBManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
