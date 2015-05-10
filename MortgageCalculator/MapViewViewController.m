@@ -27,6 +27,7 @@
 @synthesize popoverController;
 @synthesize popoverViewController;
 @synthesize mortgages;
+@synthesize annotation;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -98,6 +99,7 @@
 -(void)mapView:(MKMapView *)mapViewParam didSelectAnnotationView:(MKAnnotationView *)view
 {
     [mapView deselectAnnotation:view.annotation animated:YES];
+    annotation = view.annotation;
     int index = [view.annotation.title intValue];
     
     popoverViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"PopoverViewController"];
@@ -121,8 +123,24 @@
 - (void)deleteMortgage:(id)sender
 {
     [popoverController dismissPopoverAnimated:YES];
-}
+    [mapView removeAnnotation:annotation];
+    int index = [annotation.title intValue];
+    Mortgage *mortgage = mortgages[index];
+    int id = [mortgage.id intValue];
     
+    BOOL success = [[DBManager getSharedInstance] deleteData:id];
+    if (success == YES) {
+        [mortgages removeObject:mortgage];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:@"Data deleted successfully."
+                             delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alert show];
+    } else {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:@"Data deletion failed."
+                             delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alert show];
+    }
+}
+
 
 - (BOOL)popoverControllerShouldDismissPopover:(WYPopoverController *)controller
 {

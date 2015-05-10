@@ -15,5 +15,6 @@
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property(nonatomic, retain) CLLocationManager *locationManager;
 @property (nonatomic, strong) CLGeocoder *geocoder;
+@property (nonatomic,retain) MKPointAnnotation *annotation;
 
 @end

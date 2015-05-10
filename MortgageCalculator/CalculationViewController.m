@@ -138,8 +138,6 @@
         [self.payYear setEnabled:NO];        
         [self.saveButton setEnabled:NO];
         
-        // NSArray* result = [dbManager getData];
-        
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:@"Data saved successfully."
                                                        delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alert show];
