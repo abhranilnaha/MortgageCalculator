@@ -10,10 +10,13 @@
 #import "DBManager.h"
 #import "PopoverViewController.h"
 #import "WYPopoverController.h"
+#import "Mortgage.h"
 
 @interface MapViewViewController () <WYPopoverControllerDelegate>
 
 @property (nonatomic,retain) WYPopoverController *popoverController;
+@property (nonatomic,retain) PopoverViewController *popoverViewController;
+@property (nonatomic,retain) NSMutableArray *mortgages;
 
 @end
 
@@ -22,6 +25,8 @@
 @synthesize locationManager;
 @synthesize geocoder;
 @synthesize popoverController;
+@synthesize popoverViewController;
+@synthesize mortgages;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -42,12 +47,13 @@
     [mapView setRegion:[self.mapView regionThatFits:region] animated:YES];
     
     NSArray *data = [[DBManager getSharedInstance] getData];
+    mortgages = [[NSMutableArray alloc] init];
     
     for (NSMutableDictionary *resultDictionary in data) {
         NSNumber *id = [resultDictionary objectForKey:@"id"];
         NSString *propertyType = [resultDictionary objectForKey:@"propertyType"];
-        NSString *address = [resultDictionary objectForKey:@"address"];
-        NSString *city = [resultDictionary objectForKey:@"city"];
+        NSString *streetAddress = [resultDictionary objectForKey:@"address"];
+        NSString *cityName = [resultDictionary objectForKey:@"city"];
         NSString *zipCode = [resultDictionary objectForKey:@"zipCode"];
         NSNumber *loanAmount = [resultDictionary objectForKey:@"loanAmount"];
         NSNumber *downPayment = [resultDictionary objectForKey:@"downPayment"];
@@ -55,7 +61,21 @@
         NSNumber *payYear = [resultDictionary objectForKey:@"payYear"];
         NSString *mortgageAmount = [resultDictionary objectForKey:@"mortgageAmount"];
         
-        NSString *geocodeAddressString = [NSString stringWithFormat:@"%@ %@ %@", address, city, zipCode];
+        Mortgage *mortgage = [[Mortgage alloc] init];
+        mortgage.id = id;
+        mortgage.propertyType = propertyType;
+        mortgage.streetAddress = streetAddress;
+        mortgage.cityName = cityName;
+        mortgage.zipCode = zipCode;
+        mortgage.loanAmount = loanAmount;
+        mortgage.downPayment = downPayment;
+        mortgage.annualRate = annualRate;
+        mortgage.payYear = payYear;
+        mortgage.mortgageAmount =mortgageAmount;
+        
+        [mortgages addObject:mortgage];
+        
+        NSString *geocodeAddressString = [NSString stringWithFormat:@"%@ %@ %@", streetAddress, cityName, zipCode];
         
         geocoder = [[CLGeocoder alloc] init];
         [geocoder geocodeAddressString:geocodeAddressString completionHandler:^(NSArray *placemarks, NSError *error) {
@@ -67,9 +87,8 @@
                 // Add an annotation
                 MKPointAnnotation *point = [[MKPointAnnotation alloc] init];
                 point.coordinate = coordinate;
-                point.title = [NSString stringWithFormat:@"Loan Amount: %@", loanAmount];
-                point.subtitle = [NSString stringWithFormat:@"Mortgage Amount: %@", mortgageAmount];
-                
+                NSUInteger index = [mortgages indexOfObject:mortgage];
+                point.title = @(index).stringValue;
                 [mapView addAnnotation:point];
             }
         }];
@@ -79,8 +98,10 @@
 -(void)mapView:(MKMapView *)mapViewParam didSelectAnnotationView:(MKAnnotationView *)view
 {
     [mapView deselectAnnotation:view.annotation animated:YES];
+    int index = [view.annotation.title intValue];
     
-    PopoverViewController *popoverViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"PopoverViewController"];
+    popoverViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"PopoverViewController"];
+    popoverViewController.mortgage = mortgages[index];
     popoverViewController.title = @"Mortgage";
     [popoverViewController.navigationItem setLeftBarButtonItem:[[UIBarButtonItem alloc] initWithTitle:@"Delete" style:UIBarButtonItemStylePlain target:self action:@selector(deleteMortgage:)]];
     [popoverViewController.navigationItem setRightBarButtonItem:[[UIBarButtonItem alloc] initWithTitle:@"Edit" style:UIBarButtonItemStylePlain target:self action:@selector(editMortgage:)]];
@@ -93,12 +114,13 @@
 
 - (void)editMortgage:(id)sender
 {
-    
+    [popoverController dismissPopoverAnimated:YES];
+    [popoverViewController performSegueWithIdentifier:@"EditMortgageSegue" sender:sender];
 }
 
 - (void)deleteMortgage:(id)sender
 {
-    
+    [popoverController dismissPopoverAnimated:YES];
 }
     
 
@@ -117,15 +139,5 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Mortgage.h"
 
 @interface PopoverViewController : UIViewController
 
@@ -16,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *loanAmount;
 @property (weak, nonatomic) IBOutlet UITextField *apr;
 @property (weak, nonatomic) IBOutlet UITextField *monthlyPayment;
+@property (nonatomic,retain) Mortgage *mortgage;
 - (IBAction)deleteMortgage:(id)sender;
 - (IBAction)editMortgage:(id)sender;
 
