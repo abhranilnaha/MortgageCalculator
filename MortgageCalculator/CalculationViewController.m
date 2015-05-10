@@ -124,7 +124,7 @@
     NSString* mortgageAmount = self.monthlyPayment.text;
     
     DBManager* dbManager = [DBManager getSharedInstance];
-    BOOL success = [dbManager saveData:propertyType address:address city:city state:state zipCode:zipCode
+    BOOL success = [dbManager createData:propertyType address:address city:city state:state zipCode:zipCode
                         loanAmount:loanAmount downPayment:downPayment annualRate:annualRate payYear:payYear mortgageAmount:mortgageAmount];
     
     if (success == YES) {
