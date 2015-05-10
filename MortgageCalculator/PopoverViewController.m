@@ -35,20 +35,4 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    if ([[segue identifier] isEqualToString:@"EditMortgageSegue"])
-    {
-        CalculationViewController *calculationViewController = [segue destinationViewController];
-        [calculationViewController.streetAddress setText:self.streetAddress.text];
-        [calculationViewController.cityName setText:self.city.text];
-        [calculationViewController.monthlyPayment setText:self.monthlyPayment.text];
-    }
-}
-
-- (IBAction)deleteMortgage:(id)sender {
-}
-
-- (IBAction)editMortgage:(id)sender {
-}
 @end

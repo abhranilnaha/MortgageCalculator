@@ -12,6 +12,7 @@
 @interface CalculationViewController ()
 {
     NSArray *statePickerData;
+    int mortgageId;
 }
 @end
 
@@ -45,10 +46,34 @@
     [self.cityName setText:@"Cupertino"];
     [self.statePicker selectRow:4 inComponent:0 animated:YES];
     [self.zipCode setText:@"95014"];
-    
     [self.loanAmount setText:@"100000"];
     [self.downPayment setText:@"20000"];
-    [self.payYear setText:@"30"];
+    [self.payYear setText:@"30"];    
+}
+
+- (void)initWithMortgage:(Mortgage*)mortgage {
+    mortgageId = [mortgage.id intValue];
+    [self.propertyType setTitle:mortgage.propertyType forState:UIControlStateNormal];
+    [self.streetAddress setText:mortgage.streetAddress];
+    [self.cityName setText:mortgage.cityName];
+    [self.statePicker selectRow:[statePickerData indexOfObject:mortgage.stateName] inComponent:0 animated:YES];
+    [self.zipCode setText:mortgage.zipCode];
+    [self.loanAmount setText:[mortgage.loanAmount stringValue]];
+    [self.downPayment setText:[mortgage.downPayment stringValue]];
+    [self.annualRate setText:[mortgage.annualRate stringValue]];
+    [self.payYear setText:[mortgage.payYear stringValue]];
+    [self.monthlyPayment setText:mortgage.mortgageAmount];
+    
+    [self.propertyType setUserInteractionEnabled:YES];
+    [self.streetAddress setUserInteractionEnabled:YES];
+    [self.cityName setEnabled:YES];
+    [self.statePicker setUserInteractionEnabled:YES];
+    [self.zipCode setEnabled:YES];
+    [self.loanAmount setEnabled:YES];
+    [self.downPayment setEnabled:YES];
+    [self.annualRate setEnabled:YES];
+    [self.payYear setEnabled:YES];
+    [self.saveButton setEnabled:YES];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -124,7 +149,14 @@
     NSString* mortgageAmount = self.monthlyPayment.text;
     
     DBManager* dbManager = [DBManager getSharedInstance];
-    BOOL success = [dbManager createData:propertyType address:address city:city state:state zipCode:zipCode loanAmount:loanAmount downPayment:downPayment annualRate:annualRate payYear:payYear mortgageAmount:mortgageAmount];
+    BOOL success;
+    NSString *message;
+    
+    if (mortgageId == 0) {
+        success = [dbManager createData:propertyType address:address city:city state:state zipCode:zipCode loanAmount:loanAmount downPayment:downPayment annualRate:annualRate payYear:payYear mortgageAmount:mortgageAmount];
+    } else {
+        success = [dbManager updateData:mortgageId propertyType:propertyType address:address city:city state:state zipCode:zipCode loanAmount:loanAmount downPayment:downPayment annualRate:annualRate payYear:payYear mortgageAmount:mortgageAmount];
+    }
     
     if (success == YES) {
         [self.propertyType setUserInteractionEnabled:NO];
@@ -138,12 +170,24 @@
         [self.payYear setEnabled:NO];        
         [self.saveButton setEnabled:NO];
         
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:@"Data saved successfully."
-                                                       delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        if (mortgageId == 0) {
+            message = @"Data saved successfully.";
+        } else {
+            message = @"Data updated successfully.";
+        }
+        
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:message
+                             delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alert show];
     } else {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:@"Data save failed."
-                                                       delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        if (mortgageId == 0) {
+            message = @"Data save failed.";
+        } else {
+            message = @"Data update failed.";
+        }
+        
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:message
+                             delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alert show];
     }
 }

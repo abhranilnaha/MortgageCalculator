@@ -11,6 +11,7 @@
 #import "PopoverViewController.h"
 #import "WYPopoverController.h"
 #import "Mortgage.h"
+#import "CalculationViewController.h"
 
 @interface MapViewViewController () <WYPopoverControllerDelegate>
 
@@ -55,6 +56,7 @@
         NSString *propertyType = [resultDictionary objectForKey:@"propertyType"];
         NSString *streetAddress = [resultDictionary objectForKey:@"address"];
         NSString *cityName = [resultDictionary objectForKey:@"city"];
+        NSString *stateName = [resultDictionary objectForKey:@"state"];
         NSString *zipCode = [resultDictionary objectForKey:@"zipCode"];
         NSNumber *loanAmount = [resultDictionary objectForKey:@"loanAmount"];
         NSNumber *downPayment = [resultDictionary objectForKey:@"downPayment"];
@@ -67,6 +69,7 @@
         mortgage.propertyType = propertyType;
         mortgage.streetAddress = streetAddress;
         mortgage.cityName = cityName;
+        mortgage.stateName = stateName;
         mortgage.zipCode = zipCode;
         mortgage.loanAmount = loanAmount;
         mortgage.downPayment = downPayment;
@@ -117,7 +120,12 @@
 - (void)editMortgage:(id)sender
 {
     [popoverController dismissPopoverAnimated:YES];
-    [popoverViewController performSegueWithIdentifier:@"EditMortgageSegue" sender:sender];
+    self.tabBarController.selectedIndex = 0;
+    UINavigationController *navController = [self.tabBarController.viewControllers objectAtIndex:0];
+    CalculationViewController *calculationController = [navController.viewControllers objectAtIndex:0];
+    int index = [annotation.title intValue];
+    Mortgage *mortgage = mortgages[index];
+    [calculationController initWithMortgage:mortgage];
 }
 
 - (void)deleteMortgage:(id)sender

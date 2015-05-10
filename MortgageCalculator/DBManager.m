@@ -70,7 +70,7 @@ static sqlite3_stmt *statement = nil;
 - (BOOL) updateData:(int)id propertyType:(NSString*)propertyType address:(NSString*)address city:(NSString*)city state:(NSString*)state zipCode:(NSString*)zipCode loanAmount:(int)loanAmount downPayment:(int)downPayment annualRate:(double)annualRate payYear:(int)payYear mortgageAmount:(NSString*)mortgageAmount {
     const char *dbpath = [databasePath UTF8String];
     if (sqlite3_open(dbpath, &database) == SQLITE_OK) {
-        NSString *updateSQL = [NSString stringWithFormat:@"update mortgageDetail set propertyType = \"%@\", address = \"%@\", city = \"%@\", state = \"%@\", zipCode = \"%@\", loanAmount = \"%d\", downPayment = \"%d\", annualRate = \"%f\", payYear = \"%d\", mortgageAmount = \"%@\") where id = \"%d\"", propertyType, address, city, state, zipCode, loanAmount, downPayment, annualRate, payYear, mortgageAmount, id];
+        NSString *updateSQL = [NSString stringWithFormat:@"update mortgageDetail set propertyType = \"%@\", address = \"%@\", city = \"%@\", state = \"%@\", zipCode = \"%@\", loanAmount = \"%d\", downPayment = \"%d\", annualRate = \"%f\", payYear = \"%d\", mortgageAmount = \"%@\" where id = \"%d\"", propertyType, address, city, state, zipCode, loanAmount, downPayment, annualRate, payYear, mortgageAmount, id];
         const char *update_stmt = [updateSQL UTF8String];
         sqlite3_prepare_v2(database, update_stmt, -1, &statement, NULL);
         if (sqlite3_step(statement) == SQLITE_DONE) {

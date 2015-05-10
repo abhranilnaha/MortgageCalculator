@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Mortgage.h"
 
 @interface CalculationViewController : UIViewController <UIActionSheetDelegate, UIPickerViewDataSource, UIPickerViewDelegate>
 
@@ -24,11 +25,10 @@
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *saveButton;
 
 - (IBAction)createMortgage:(id)sender;
-
 - (IBAction)saveMortgage:(id)sender;
-
 - (IBAction)showPropertyType:(id)sender;
-
 - (IBAction)calculateMortgage:(id)sender;
+
+- (void)initWithMortgage:(Mortgage*)mortgage;
 
 @end

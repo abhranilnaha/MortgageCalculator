@@ -18,7 +18,5 @@
 @property (weak, nonatomic) IBOutlet UITextField *apr;
 @property (weak, nonatomic) IBOutlet UITextField *monthlyPayment;
 @property (nonatomic,retain) Mortgage *mortgage;
-- (IBAction)deleteMortgage:(id)sender;
-- (IBAction)editMortgage:(id)sender;
 
 @end
