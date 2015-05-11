@@ -3,9 +3,6 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "-[MapViewViewController mapView:didSelectAnnotationView:]:MapViewViewController.m">
-      </ContextState>
-      <ContextState
          contextName = "-[CalculationViewController viewDidLoad]:CalculationViewController.m">
          <PersistentStrings>
             <PersistentString
@@ -23,18 +20,7 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "-[PopoverViewController prepareForSegue:sender:]:PopoverViewController.m">
-         <PersistentStrings>
-            <PersistentString
-               value = "self.city.text">
-            </PersistentString>
-            <PersistentString
-               value = "calculationViewController.mortgage">
-            </PersistentString>
-            <PersistentString
-               value = "self.mortgage.streetAddress">
-            </PersistentString>
-         </PersistentStrings>
+         contextName = "-[MapViewViewController mapView:didSelectAnnotationView:]:MapViewViewController.m">
       </ContextState>
       <ContextState
          contextName = "-[CalculationViewController createMortgage:]:CalculationViewController.m">
@@ -47,6 +33,34 @@
             </PersistentString>
             <PersistentString
                value = "self.mortgage">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[MapViewViewController editMortgage:]:MapViewViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[MapViewViewController viewWillAppear:]:MapViewViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "mapView.userLocation">
+            </PersistentString>
+            <PersistentString
+               value = "mortgages">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[PopoverViewController prepareForSegue:sender:]:PopoverViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.city.text">
+            </PersistentString>
+            <PersistentString
+               value = "calculationViewController.mortgage">
+            </PersistentString>
+            <PersistentString
+               value = "self.mortgage.streetAddress">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

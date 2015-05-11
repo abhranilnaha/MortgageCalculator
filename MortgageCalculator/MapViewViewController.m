@@ -44,10 +44,21 @@
     [locationManager startUpdatingLocation];
 }
 
+- (void) viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    if (mortgages != nil) {
+        [mapView removeAnnotations:[mapView annotations]];
+        [self loadData];
+    }
+}
+
 - (void)mapView:(MKMapView *)mapViewParam didUpdateUserLocation:(MKUserLocation *)userLocation {
     MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(userLocation.coordinate, 200000, 200000);
     [mapView setRegion:[self.mapView regionThatFits:region] animated:YES];
-    
+    [self loadData];
+}
+
+- (void)loadData {
     NSArray *data = [[DBManager getSharedInstance] getData];
     mortgages = [[NSMutableArray alloc] init];
     
@@ -87,7 +98,7 @@
                 CLPlacemark *placemark = [placemarks objectAtIndex:0];
                 CLLocation *location = placemark.location;
                 CLLocationCoordinate2D coordinate = location.coordinate;
-            
+                
                 // Add an annotation
                 MKPointAnnotation *point = [[MKPointAnnotation alloc] init];
                 point.coordinate = coordinate;
