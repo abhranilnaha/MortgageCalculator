@@ -16,10 +16,10 @@
 		2E68C0FF1AE0A5C200392AB9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E68C0FD1AE0A5C200392AB9 /* LaunchScreen.xib */; };
 		2E68C10B1AE0A5C200392AB9 /* MortgageCalculatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E68C10A1AE0A5C200392AB9 /* MortgageCalculatorTests.m */; };
 		2E68C1191AE0C44300392AB9 /* MapViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E68C1181AE0C44300392AB9 /* MapViewViewController.m */; };
+		2EAB3D2A1B0037C200E8C477 /* WYPopoverController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EAB3D291B0037C200E8C477 /* WYPopoverController.m */; };
 		2EF7D3CB1AFEAA6400F4A1E8 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EF7D3CA1AFEAA6400F4A1E8 /* CoreLocation.framework */; };
 		2EF7D3CE1AFEE81B00F4A1E8 /* PopoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EF7D3CD1AFEE81B00F4A1E8 /* PopoverViewController.m */; };
 		2EF7D3D91AFEF6D700F4A1E8 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EF7D3D81AFEF6D700F4A1E8 /* QuartzCore.framework */; };
-		2EF7D3E51AFF012700F4A1E8 /* WYPopoverController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EF7D3E21AFF012700F4A1E8 /* WYPopoverController.m */; };
 		2EF7D3EC1AFF6A3B00F4A1E8 /* Mortgage.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EF7D3EB1AFF6A3B00F4A1E8 /* Mortgage.m */; };
 		2EFB16DF1AE6434800E8D766 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EFB16DE1AE6434800E8D766 /* MapKit.framework */; };
 		2EFB16E81AE64D0800E8D766 /* CalculationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EFB16E71AE64D0800E8D766 /* CalculationViewController.m */; };
@@ -52,13 +52,13 @@
 		2E68C10A1AE0A5C200392AB9 /* MortgageCalculatorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MortgageCalculatorTests.m; sourceTree = "<group>"; };
 		2E68C1171AE0C44300392AB9 /* MapViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewViewController.h; sourceTree = "<group>"; };
 		2E68C1181AE0C44300392AB9 /* MapViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewViewController.m; sourceTree = "<group>"; };
+		2EAB3D281B0037C200E8C477 /* WYPopoverController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYPopoverController.h; sourceTree = "<group>"; };
+		2EAB3D291B0037C200E8C477 /* WYPopoverController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYPopoverController.m; sourceTree = "<group>"; };
 		2EF7D3C81AFEA91D00F4A1E8 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		2EF7D3CA1AFEAA6400F4A1E8 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		2EF7D3CC1AFEE81B00F4A1E8 /* PopoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopoverViewController.h; sourceTree = "<group>"; };
 		2EF7D3CD1AFEE81B00F4A1E8 /* PopoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopoverViewController.m; sourceTree = "<group>"; };
 		2EF7D3D81AFEF6D700F4A1E8 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		2EF7D3E11AFF012700F4A1E8 /* WYPopoverController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WYPopoverController.h; path = "../../../../../Desktop/WYPopoverController-master/WYPopoverController/WYPopoverController.h"; sourceTree = "<group>"; };
-		2EF7D3E21AFF012700F4A1E8 /* WYPopoverController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WYPopoverController.m; path = "../../../../../Desktop/WYPopoverController-master/WYPopoverController/WYPopoverController.m"; sourceTree = "<group>"; };
 		2EF7D3EA1AFF6A3B00F4A1E8 /* Mortgage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mortgage.h; sourceTree = "<group>"; };
 		2EF7D3EB1AFF6A3B00F4A1E8 /* Mortgage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Mortgage.m; sourceTree = "<group>"; };
 		2EFB16DE1AE6434800E8D766 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -120,8 +120,8 @@
 				2E68C1181AE0C44300392AB9 /* MapViewViewController.m */,
 				2EF7D3CC1AFEE81B00F4A1E8 /* PopoverViewController.h */,
 				2EF7D3CD1AFEE81B00F4A1E8 /* PopoverViewController.m */,
-				2EF7D3E11AFF012700F4A1E8 /* WYPopoverController.h */,
-				2EF7D3E21AFF012700F4A1E8 /* WYPopoverController.m */,
+				2EAB3D281B0037C200E8C477 /* WYPopoverController.h */,
+				2EAB3D291B0037C200E8C477 /* WYPopoverController.m */,
 				2EF7D3EA1AFF6A3B00F4A1E8 /* Mortgage.h */,
 				2EF7D3EB1AFF6A3B00F4A1E8 /* Mortgage.m */,
 				2E5903E31AEB83A100883A53 /* DBManager.h */,
@@ -270,7 +270,7 @@
 				2E68C0F11AE0A5C200392AB9 /* AppDelegate.m in Sources */,
 				2E68C0EE1AE0A5C200392AB9 /* main.m in Sources */,
 				2E5903E51AEB83A100883A53 /* DBManager.m in Sources */,
-				2EF7D3E51AFF012700F4A1E8 /* WYPopoverController.m in Sources */,
+				2EAB3D2A1B0037C200E8C477 /* WYPopoverController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

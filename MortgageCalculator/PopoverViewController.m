@@ -21,6 +21,7 @@
     self.streetAddress.layer.borderWidth = 0.5f;
     self.streetAddress.layer.cornerRadius = 10;
     self.streetAddress.layer.borderColor = [[UIColor lightGrayColor] CGColor];
+    [self.streetAddress setUserInteractionEnabled:NO];
     
     [self.propertyType setText:self.mortgage.propertyType];
     [self.streetAddress setText:self.mortgage.streetAddress];

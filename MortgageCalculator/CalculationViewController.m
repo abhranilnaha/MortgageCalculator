@@ -134,8 +134,6 @@
     if (![self validateInputs:@"save"])
         return;
     
-    [self calculateMortgage:self];
-    
     // Save Data
     NSString* propertyType = self.propertyType.titleLabel.text;
     NSString* address = self.streetAddress.text;
@@ -223,8 +221,7 @@
 -(BOOL)validateInputs:(NSString*)action {
     if ([action  isEqual: @"save"]) {
         if (self.streetAddress.text.length == 0) {
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:@"Street Address is required."
-                                                           delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:@"Street Address is required." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
             [alert show];
             return NO;
         }
@@ -232,7 +229,7 @@
     if ([action  isEqual: @"calculate"]) {
         if (self.annualRate.text.length == 0) {
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:@"APR is required."
-                                                           delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+                                  delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
             [alert show];
             return NO;
         }
