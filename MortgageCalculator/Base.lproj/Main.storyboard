@@ -392,7 +392,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UCy-nG-Qh5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="756" y="-986"/>
+            <point key="canvasLocation" x="750" y="-948"/>
+        </scene>
+        <!--Street View Controller-->
+        <scene sceneID="dmU-m6-vzv">
+            <objects>
+                <viewController id="9dZ-sB-Yr9" customClass="StreetViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Mex-j3-LQs"/>
+                        <viewControllerLayoutGuide type="bottom" id="8E5-Sa-5zC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="iTV-9H-yy0">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="l5P-Gt-13P" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2192" y="579"/>
         </scene>
         <!--Map View View Controller-->
         <scene sceneID="wg7-f3-ORb">
@@ -430,6 +448,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="mapView" destination="Nd3-ew-u7j" id="Jje-0n-rBK"/>
+                        <segue destination="9dZ-sB-Yr9" kind="show" identifier="ShowStreetView" id="LP8-Hc-UfP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>

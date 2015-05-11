@@ -12,6 +12,7 @@
 #import "WYPopoverController.h"
 #import "Mortgage.h"
 #import "CalculationViewController.h"
+#import "StreetViewController.h"
 
 @interface MapViewViewController () <WYPopoverControllerDelegate>
 
@@ -117,15 +118,29 @@
     int index = [view.annotation.title intValue];
     
     popoverViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"PopoverViewController"];
+    
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [button addTarget:self action:@selector(showStreetView:) forControlEvents:UIControlEventTouchUpInside];
+    [button setTitle:@"Show Street View" forState:UIControlStateNormal];
+    button.frame = CGRectMake(80.0, 300.0, 160.0, 40.0);
+    [popoverViewController.view addSubview:button];
+    
     popoverViewController.mortgage = mortgages[index];
     popoverViewController.title = @"Mortgage";
+    
     [popoverViewController.navigationItem setLeftBarButtonItem:[[UIBarButtonItem alloc] initWithTitle:@"Delete" style:UIBarButtonItemStylePlain target:self action:@selector(deleteMortgage:)]];
     [popoverViewController.navigationItem setRightBarButtonItem:[[UIBarButtonItem alloc] initWithTitle:@"Edit" style:UIBarButtonItemStylePlain target:self action:@selector(editMortgage:)]];
     UINavigationController *contentViewController = [[UINavigationController alloc] initWithRootViewController:popoverViewController];
     
     popoverController = [[WYPopoverController alloc] initWithContentViewController:contentViewController];
-    popoverController.popoverContentSize = CGSizeMake(350, 350);
+    popoverController.popoverContentSize = CGSizeMake(350, 400);
     [popoverController presentPopoverFromRect:view.bounds inView:view permittedArrowDirections:WYPopoverArrowDirectionDown animated:YES];
+}
+
+- (void)showStreetView:(id)sender
+{
+    [popoverController dismissPopoverAnimated:YES];
+    [self performSegueWithIdentifier:@"ShowStreetView" sender:sender];
 }
 
 - (void)editMortgage:(id)sender
@@ -157,6 +172,14 @@
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:@"Data deletion failed."
                              delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alert show];
+    }
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"ShowStreetView"])
+    {
+        StreetViewController *streetViewController = [segue destinationViewController];
     }
 }
 
