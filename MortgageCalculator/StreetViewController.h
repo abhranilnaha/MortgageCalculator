@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <GoogleMaps/GoogleMaps.h>
 
 @interface StreetViewController : UIViewController
+
+@property CLLocationCoordinate2D coordinate;
 
 @end

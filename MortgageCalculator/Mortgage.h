@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreLocation/CoreLocation.h>
 
 @interface Mortgage : NSObject
 
@@ -21,5 +22,6 @@
 @property NSNumber *annualRate;
 @property NSNumber *payYear;
 @property NSString *mortgageAmount;
+@property CLLocationCoordinate2D coordinate;
 
 @end

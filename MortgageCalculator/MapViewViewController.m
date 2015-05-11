@@ -98,11 +98,11 @@
             if ([placemarks count] > 0) {
                 CLPlacemark *placemark = [placemarks objectAtIndex:0];
                 CLLocation *location = placemark.location;
-                CLLocationCoordinate2D coordinate = location.coordinate;
+                mortgage.coordinate = location.coordinate;
                 
                 // Add an annotation
                 MKPointAnnotation *point = [[MKPointAnnotation alloc] init];
-                point.coordinate = coordinate;
+                point.coordinate = mortgage.coordinate;
                 NSUInteger index = [mortgages indexOfObject:mortgage];
                 point.title = @(index).stringValue;
                 [mapView addAnnotation:point];
@@ -119,14 +119,14 @@
     
     popoverViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"PopoverViewController"];
     
+    popoverViewController.mortgage = mortgages[index];
+    popoverViewController.title = @"Mortgage";
+    
     UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [button addTarget:self action:@selector(showStreetView:) forControlEvents:UIControlEventTouchUpInside];
     [button setTitle:@"Show Street View" forState:UIControlStateNormal];
     button.frame = CGRectMake(80.0, 300.0, 160.0, 40.0);
-    [popoverViewController.view addSubview:button];
-    
-    popoverViewController.mortgage = mortgages[index];
-    popoverViewController.title = @"Mortgage";
+    [popoverViewController.view addSubview:button];   
     
     [popoverViewController.navigationItem setLeftBarButtonItem:[[UIBarButtonItem alloc] initWithTitle:@"Delete" style:UIBarButtonItemStylePlain target:self action:@selector(deleteMortgage:)]];
     [popoverViewController.navigationItem setRightBarButtonItem:[[UIBarButtonItem alloc] initWithTitle:@"Edit" style:UIBarButtonItemStylePlain target:self action:@selector(editMortgage:)]];
@@ -180,6 +180,9 @@
     if ([[segue identifier] isEqualToString:@"ShowStreetView"])
     {
         StreetViewController *streetViewController = [segue destinationViewController];
+        int index = [annotation.title intValue];
+        Mortgage *mortgage = mortgages[index];
+        streetViewController.coordinate = mortgage.coordinate;
     }
 }
 

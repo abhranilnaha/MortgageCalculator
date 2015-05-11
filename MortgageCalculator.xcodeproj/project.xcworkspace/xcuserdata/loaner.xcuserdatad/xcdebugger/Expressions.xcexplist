@@ -20,19 +20,22 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "-[StreetViewController viewDidLoad]:StreetViewController.m">
+      </ContextState>
+      <ContextState
          contextName = "-[MapViewViewController mapView:didSelectAnnotationView:]:MapViewViewController.m">
       </ContextState>
       <ContextState
          contextName = "-[CalculationViewController createMortgage:]:CalculationViewController.m">
          <PersistentStrings>
             <PersistentString
-               value = "mortgageId">
+               value = "self.mortgage">
             </PersistentString>
             <PersistentString
                value = "self.address">
             </PersistentString>
             <PersistentString
-               value = "self.mortgage">
+               value = "mortgageId">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -43,10 +46,10 @@
          contextName = "-[MapViewViewController viewWillAppear:]:MapViewViewController.m">
          <PersistentStrings>
             <PersistentString
-               value = "mapView.userLocation">
+               value = "mortgages">
             </PersistentString>
             <PersistentString
-               value = "mortgages">
+               value = "mapView.userLocation">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

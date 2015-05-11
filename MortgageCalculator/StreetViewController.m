@@ -7,7 +7,6 @@
 //
 
 #import "StreetViewController.h"
-#import <GoogleMaps/GoogleMaps.h>
 
 static CLLocationCoordinate2D kPanoramaNear = {40.761388, -73.978133};
 static CLLocationCoordinate2D kMarkerAt = {40.761455, -73.977814};
@@ -24,7 +23,7 @@ static CLLocationCoordinate2D kMarkerAt = {40.761455, -73.977814};
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    view_ = [GMSPanoramaView panoramaWithFrame:CGRectZero nearCoordinate:kPanoramaNear];
+    view_ = [GMSPanoramaView panoramaWithFrame:CGRectZero nearCoordinate:self.coordinate];
     view_.backgroundColor = [UIColor grayColor];
     view_.delegate = self;
     self.view = view_;
