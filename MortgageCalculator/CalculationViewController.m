@@ -107,6 +107,7 @@
 }
 
 - (IBAction)createMortgage:(id)sender {
+    mortgageId = 0;
     [self.propertyType setTitle:@"House" forState:UIControlStateNormal];
     [self.streetAddress setText:@""];
     [self.cityName setText:@"Cupertino"];
