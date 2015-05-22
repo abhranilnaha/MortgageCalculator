@@ -47,8 +47,11 @@
     [self.statePicker selectRow:4 inComponent:0 animated:YES];
     [self.zipCode setText:@"95014"];
     [self.loanAmount setText:@"100000"];
-    [self.downPayment setText:@"20000"];
-    [self.payYear setText:@"30"];    
+    [self.downPayment setText:@"0"];
+    [self.propertyValue setText:@"100000"];
+    [self.payYear setText:@"30"];
+    
+    [self.loanAmount setEnabled:NO];
 }
 
 - (void)initWithMortgage:(Mortgage*)mortgage {
@@ -60,6 +63,7 @@
     [self.zipCode setText:mortgage.zipCode];
     [self.loanAmount setText:[mortgage.loanAmount stringValue]];
     [self.downPayment setText:[mortgage.downPayment stringValue]];
+    [self.propertyValue setText:[mortgage.propertyValue stringValue]];
     [self.annualRate setText:[mortgage.annualRate stringValue]];
     [self.payYear setText:[mortgage.payYear stringValue]];
     [self.monthlyPayment setText:mortgage.mortgageAmount];
@@ -69,7 +73,7 @@
     [self.cityName setEnabled:YES];
     [self.statePicker setUserInteractionEnabled:YES];
     [self.zipCode setEnabled:YES];
-    [self.loanAmount setEnabled:YES];
+    [self.propertyValue setEnabled:YES];
     [self.downPayment setEnabled:YES];
     [self.annualRate setEnabled:YES];
     [self.payYear setEnabled:YES];
@@ -114,7 +118,8 @@
     [self.statePicker selectRow:4 inComponent:0 animated:YES];
     [self.zipCode setText:@"95014"];
     [self.loanAmount setText:@"100000"];
-    [self.downPayment setText:@"20000"];
+    [self.downPayment setText:@"0"];
+    [self.propertyValue setText:@"100000"];
     [self.annualRate setText:@""];
     [self.payYear setText:@"30"];
     [self.monthlyPayment setText:@""];
@@ -124,7 +129,7 @@
     [self.cityName setEnabled:YES];
     [self.statePicker setUserInteractionEnabled:YES];
     [self.zipCode setEnabled:YES];
-    [self.loanAmount setEnabled:YES];
+    [self.propertyValue setEnabled:YES];
     [self.downPayment setEnabled:YES];
     [self.annualRate setEnabled:YES];
     [self.payYear setEnabled:YES];
@@ -143,6 +148,7 @@
     NSString* zipCode = self.zipCode.text;
     int loanAmount = [self.loanAmount.text intValue];
     int downPayment = [self.downPayment.text intValue];
+    int propertyValue = [self.propertyValue.text intValue];
     double annualRate = [self.annualRate.text doubleValue];
     int payYear = [self.payYear.text intValue];
     NSString* mortgageAmount = self.monthlyPayment.text;
@@ -152,9 +158,9 @@
     NSString *message;
     
     if (mortgageId == 0) {
-        success = [dbManager createData:propertyType address:address city:city state:state zipCode:zipCode loanAmount:loanAmount downPayment:downPayment annualRate:annualRate payYear:payYear mortgageAmount:mortgageAmount];
+        success = [dbManager createData:propertyType address:address city:city state:state zipCode:zipCode loanAmount:loanAmount downPayment:downPayment propertyValue:propertyValue annualRate:annualRate payYear:payYear mortgageAmount:mortgageAmount];
     } else {
-        success = [dbManager updateData:mortgageId propertyType:propertyType address:address city:city state:state zipCode:zipCode loanAmount:loanAmount downPayment:downPayment annualRate:annualRate payYear:payYear mortgageAmount:mortgageAmount];
+        success = [dbManager updateData:mortgageId propertyType:propertyType address:address city:city state:state zipCode:zipCode loanAmount:loanAmount downPayment:downPayment propertyValue:propertyValue annualRate:annualRate payYear:payYear mortgageAmount:mortgageAmount];
     }
     
     if (success == YES) {
@@ -163,7 +169,7 @@
         [self.cityName setEnabled:NO];
         [self.statePicker setUserInteractionEnabled:NO];
         [self.zipCode setEnabled:NO];
-        [self.loanAmount setEnabled:NO];
+        [self.propertyValue setEnabled:NO];
         [self.downPayment setEnabled:NO];
         [self.annualRate setEnabled:NO];
         [self.payYear setEnabled:NO];        
@@ -199,7 +205,11 @@
 
 - (IBAction)calculateMortgage:(id)sender {
     int termInYears = [self.payYear.text intValue];
-    int loanAmount = [self.loanAmount.text intValue];
+    int propertyValue = [self.propertyValue.text intValue];
+    int downPayment = [self.downPayment.text intValue];
+    int loanAmount = propertyValue - downPayment;
+    
+    [self.loanAmount setText:[NSString stringWithFormat:@"%d", loanAmount]];
     
     if (![self validateInputs:@"calculate"])
         return;

@@ -35,7 +35,7 @@ static sqlite3_stmt *statement = nil;
         const char *dbpath = [databasePath UTF8String];
         if (sqlite3_open(dbpath, &database) == SQLITE_OK) {
             char *errMsg;
-            const char *sql_stmt = "create table if not exists mortgageDetail (id integer primary key, propertyType text, address text, city text, state text, zipCode text, loanAmount integer, downPayment integer, annualRate float, payYear integer, mortgageAmount text)";
+            const char *sql_stmt = "create table if not exists mortgageDetail (id integer primary key, propertyType text, address text, city text, state text, zipCode text, loanAmount integer, downPayment integer, propertyValue integer, annualRate float, payYear integer, mortgageAmount text)";
             if (sqlite3_exec(database, sql_stmt, NULL, NULL, &errMsg) != SQLITE_OK) {
                 isSuccess = NO;
                 NSLog(@"Failed to create table");
@@ -50,10 +50,10 @@ static sqlite3_stmt *statement = nil;
     return isSuccess;
 }
 
-- (BOOL) createData:(NSString*)propertyType address:(NSString*)address city:(NSString*)city state:(NSString*)state zipCode:(NSString*)zipCode loanAmount:(int)loanAmount downPayment:(int)downPayment annualRate:(double)annualRate payYear:(int)payYear mortgageAmount:(NSString*)mortgageAmount {
+- (BOOL) createData:(NSString*)propertyType address:(NSString*)address city:(NSString*)city state:(NSString*)state zipCode:(NSString*)zipCode loanAmount:(int)loanAmount downPayment:(int)downPayment propertyValue:(int)propertyValue annualRate:(double)annualRate payYear:(int)payYear mortgageAmount:(NSString*)mortgageAmount {
     const char *dbpath = [databasePath UTF8String];
     if (sqlite3_open(dbpath, &database) == SQLITE_OK) {
-        NSString *insertSQL = [NSString stringWithFormat:@"insert into mortgageDetail (propertyType, address, city, state, zipCode, loanAmount, downPayment, annualRate, payYear, mortgageAmount) values (\"%@\",\"%@\", \"%@\", \"%@\", \"%@\",\"%d\", \"%d\", \"%f\", \"%d\", \"%@\")", propertyType, address, city, state, zipCode, loanAmount, downPayment, annualRate, payYear, mortgageAmount];
+        NSString *insertSQL = [NSString stringWithFormat:@"insert into mortgageDetail (propertyType, address, city, state, zipCode, loanAmount, downPayment, propertyValue, annualRate, payYear, mortgageAmount) values (\"%@\",\"%@\", \"%@\", \"%@\", \"%@\",\"%d\", \"%d\", \"%d\", \"%f\", \"%d\", \"%@\")", propertyType, address, city, state, zipCode, loanAmount, downPayment, propertyValue, annualRate, payYear, mortgageAmount];
         const char *insert_stmt = [insertSQL UTF8String];
         sqlite3_prepare_v2(database, insert_stmt,-1, &statement, NULL);
         if (sqlite3_step(statement) == SQLITE_DONE) {
@@ -67,10 +67,10 @@ static sqlite3_stmt *statement = nil;
     return NO;
 }
 
-- (BOOL) updateData:(int)id propertyType:(NSString*)propertyType address:(NSString*)address city:(NSString*)city state:(NSString*)state zipCode:(NSString*)zipCode loanAmount:(int)loanAmount downPayment:(int)downPayment annualRate:(double)annualRate payYear:(int)payYear mortgageAmount:(NSString*)mortgageAmount {
+- (BOOL) updateData:(int)id propertyType:(NSString*)propertyType address:(NSString*)address city:(NSString*)city state:(NSString*)state zipCode:(NSString*)zipCode loanAmount:(int)loanAmount downPayment:(int)downPayment propertyValue:(int)propertyValue annualRate:(double)annualRate payYear:(int)payYear mortgageAmount:(NSString*)mortgageAmount {
     const char *dbpath = [databasePath UTF8String];
     if (sqlite3_open(dbpath, &database) == SQLITE_OK) {
-        NSString *updateSQL = [NSString stringWithFormat:@"update mortgageDetail set propertyType = \"%@\", address = \"%@\", city = \"%@\", state = \"%@\", zipCode = \"%@\", loanAmount = \"%d\", downPayment = \"%d\", annualRate = \"%f\", payYear = \"%d\", mortgageAmount = \"%@\" where id = \"%d\"", propertyType, address, city, state, zipCode, loanAmount, downPayment, annualRate, payYear, mortgageAmount, id];
+        NSString *updateSQL = [NSString stringWithFormat:@"update mortgageDetail set propertyType = \"%@\", address = \"%@\", city = \"%@\", state = \"%@\", zipCode = \"%@\", loanAmount = \"%d\", propertyValue = \"%d\", downPayment = \"%d\", annualRate = \"%f\", payYear = \"%d\", mortgageAmount = \"%@\" where id = \"%d\"", propertyType, address, city, state, zipCode, loanAmount, downPayment, propertyValue, annualRate, payYear, mortgageAmount, id];
         const char *update_stmt = [updateSQL UTF8String];
         sqlite3_prepare_v2(database, update_stmt, -1, &statement, NULL);
         if (sqlite3_step(statement) == SQLITE_DONE) {
@@ -106,7 +106,7 @@ static sqlite3_stmt *statement = nil;
     const char *dbpath = [databasePath UTF8String];
     if (sqlite3_open(dbpath, &database) == SQLITE_OK) {
         NSString *querySQL = [NSString stringWithFormat:
-                              @"select id, propertyType, address, city, state, zipCode, loanAmount, downPayment, annualRate, payYear, mortgageAmount from mortgageDetail"];
+                              @"select id, propertyType, address, city, state, zipCode, loanAmount, downPayment, propertyValue, annualRate, payYear, mortgageAmount from mortgageDetail"];
         const char *query_stmt = [querySQL UTF8String];
         NSMutableArray *resultArray = [[NSMutableArray alloc]init];
         if (sqlite3_prepare_v2(database, query_stmt, -1, &statement, NULL) == SQLITE_OK) {
@@ -134,12 +134,14 @@ static sqlite3_stmt *statement = nil;
                 [resultDictionary setObject:loanAmount forKey:@"loanAmount"];
                 NSNumber *downPayment = [NSNumber numberWithInt:(int)sqlite3_column_int(statement, 7)];
                 [resultDictionary setObject:downPayment forKey:@"downPayment"];
-                NSNumber *annualRate = [NSNumber numberWithFloat:(double)sqlite3_column_double(statement, 8)];
+                NSNumber *propertyValue = [NSNumber numberWithInt:(int)sqlite3_column_int(statement, 8)];
+                [resultDictionary setObject:propertyValue forKey:@"propertyValue"];
+                NSNumber *annualRate = [NSNumber numberWithFloat:(double)sqlite3_column_double(statement, 9)];
                 [resultDictionary setObject:annualRate forKey:@"annualRate"];
-                NSNumber *payYear = [NSNumber numberWithFloat:(int)sqlite3_column_int(statement, 9)];
+                NSNumber *payYear = [NSNumber numberWithFloat:(int)sqlite3_column_int(statement, 10)];
                 [resultDictionary setObject:payYear forKey:@"payYear"];
                 NSString *mortgageAmount = [[NSString alloc] initWithUTF8String:
-                                     (const char *) sqlite3_column_text(statement, 10)];
+                                     (const char *) sqlite3_column_text(statement, 11)];
                 [resultDictionary setObject:mortgageAmount forKey:@"mortgageAmount"];
                 
                 [resultArray addObject:resultDictionary];

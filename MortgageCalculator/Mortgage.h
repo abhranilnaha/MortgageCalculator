@@ -19,6 +19,7 @@
 @property NSString *zipCode;
 @property NSNumber *loanAmount;
 @property NSNumber *downPayment;
+@property NSNumber *propertyValue;
 @property NSNumber *annualRate;
 @property NSNumber *payYear;
 @property NSString *mortgageAmount;

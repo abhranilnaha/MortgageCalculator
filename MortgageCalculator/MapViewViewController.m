@@ -72,6 +72,7 @@
         NSString *zipCode = [resultDictionary objectForKey:@"zipCode"];
         NSNumber *loanAmount = [resultDictionary objectForKey:@"loanAmount"];
         NSNumber *downPayment = [resultDictionary objectForKey:@"downPayment"];
+        NSNumber *propertyValue = [resultDictionary objectForKey:@"propertyValue"];
         NSNumber *annualRate = [resultDictionary objectForKey:@"annualRate"];
         NSNumber *payYear = [resultDictionary objectForKey:@"payYear"];
         NSString *mortgageAmount = [resultDictionary objectForKey:@"mortgageAmount"];
@@ -85,6 +86,7 @@
         mortgage.zipCode = zipCode;
         mortgage.loanAmount = loanAmount;
         mortgage.downPayment = downPayment;
+        mortgage.propertyValue = propertyValue;
         mortgage.annualRate = annualRate;
         mortgage.payYear = payYear;
         mortgage.mortgageAmount =mortgageAmount;

@@ -17,8 +17,8 @@
 +(DBManager*)getSharedInstance;
 -(BOOL) createDB;
 -(BOOL) createData:(NSString*)propertyType address:(NSString*)address city:(NSString*)city state:(NSString*)state zipCode:(NSString*)zipCode
-      loanAmount:(int)loanAmount downPayment:(int)downPayment annualRate:(double)annualRate payYear:(int)payYear mortgageAmount:(NSString*)mortgageAmount;
--(BOOL) updateData:(int)id propertyType:(NSString*)propertyType address:(NSString*)address city:(NSString*)city state:(NSString*)state zipCode:(NSString*)zipCode loanAmount:(int)loanAmount downPayment:(int)downPayment annualRate:(double)annualRate payYear:(int)payYear mortgageAmount:(NSString*)mortgageAmount;
+      loanAmount:(int)loanAmount downPayment:(int)downPayment propertyValue:(int)propertyValue annualRate:(double)annualRate payYear:(int)payYear mortgageAmount:(NSString*)mortgageAmount;
+-(BOOL) updateData:(int)id propertyType:(NSString*)propertyType address:(NSString*)address city:(NSString*)city state:(NSString*)state zipCode:(NSString*)zipCode loanAmount:(int)loanAmount downPayment:(int)downPayment propertyValue:(int)propertyValue annualRate:(double)annualRate payYear:(int)payYear mortgageAmount:(NSString*)mortgageAmount;
 -(BOOL) deleteData:(int)id;
 -(NSArray*) getData;
 

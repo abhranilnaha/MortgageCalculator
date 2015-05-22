@@ -21,6 +21,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *downPayment;
 @property (weak, nonatomic) IBOutlet UITextField *annualRate;
 @property (weak, nonatomic) IBOutlet UITextField *payYear;
+@property (weak, nonatomic) IBOutlet UITextField *propertyValue;
 @property (weak, nonatomic) IBOutlet UILabel *monthlyPayment;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *saveButton;
 
